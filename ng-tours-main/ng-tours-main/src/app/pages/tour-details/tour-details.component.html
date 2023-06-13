@@ -1,0 +1,28 @@
+<!-- <p>tour-details works!</p> -->
+<div *ngIf="tour$ | async as card">
+    <div class="inner-container">
+<div>
+  <h1 class="titleDetail">{{card.title}}</h1>
+</div>
+<div class="first-part">
+    <img class="imgDetail" [src]="getImageUrl(card)">
+    <div class="detailTour">
+        <button class="backBtn" (click)="backtoTours()">Back To Tours</button>   
+        <p class="overview reserve">Reserve Now</p>
+        <p class="font-size">From ${{card.price}}</p>
+        <p class="font-size">Available places: {{card.quantity}}</p>
+        <p class="font-size">Departure: {{card.departurePlace}}</p>
+        <p class="font-size">Destination: {{card.destination}}</p>
+        <p class="font-size">Departure Date: {{card.departureDate}}</p>
+        <p class="font-size">Arrival Date: {{card.arrivalDate}}</p>
+    </div>
+</div>
+<div class="second-part">
+    <p class="overview">Overview</p>
+    <p class="description">{{card.description}}</p>
+    <!-- <div>
+       <img [src]="getGallery(card)"> 
+    </div> -->
+</div>
+</div>
+</div>

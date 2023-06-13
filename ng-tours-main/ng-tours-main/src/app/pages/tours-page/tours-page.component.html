@@ -1,0 +1,61 @@
+<!-- <div class="tours"> -->
+<div class="inner-container">
+      <div>
+      <form #searchForm="ngForm" (ngSubmit)="loadTours(searchForm.form.value, {page: 1})" class="search-form">
+            <div class="form-group">
+                  <input type="search" name="title" class="form-control search-tour" id="search-text" 
+                  placeholder="Search by title"  [(ngModel)]="searchFormValue.title">
+            </div>
+            <div class="form-group">
+                  <input type="search" name="destination" class="form-control search-tour" id="search-text"
+                   placeholder="Search by destination" [(ngModel)]="searchFormValue.destination">
+            </div>
+            
+            <div class="form-group">
+                  <input type="search" name="departurePlace" class="form-control search-tour" id="search-text"
+                   placeholder="Search by departure place"  [(ngModel)]="searchFormValue.departurePlace">
+            </div>
+            <div class="form-group">
+                  <input type="number" name="minPrice" class="form-control search-tour" id="search-text"
+                   placeholder="Min price"  [(ngModel)]="searchFormValue.minPrice">
+            </div>
+            <div class="form-group">
+                  <input type="number" name="maxPrice" class="form-control search-tour" id="search-text"
+                   placeholder="Max price"  [(ngModel)]="searchFormValue.maxPrice">
+            </div>
+            <div class="form-group">
+                  <input type="search" name="departureDate" class="form-control search-tour" id="search-text"
+                   placeholder="Search by departure Date"  [(ngModel)]="searchFormValue.departureDate">
+            </div>
+            <div class="form-group">
+                 <input type="search" name="arrivalDate" class="form-control search-tour" id="search-text"
+                   placeholder="Search by arrival date"  [(ngModel)]="searchFormValue.arrivalDate">
+            </div>
+            <div class="form-group">
+                  <label class="body-card">Search for available tours</label>
+                  <input type="checkbox" name="quantity" class="form-control search-tour" id="search-text"
+                   placeholder="Search by available places"  [(ngModel)]="searchFormValue.quantity">
+            </div>
+            <button type="submit" class="searchToursBtn">Search</button>
+            <button type="button" class="clearBtn" (click)="searchForm.reset(); loadTours(searchForm.form.value, {page:1})">
+                  Clear
+            </button>
+      </form>
+     </div>
+      <div class="tours">
+            <app-cards *ngFor="let mycard of mycards" [card]="mycard"></app-cards>
+      </div>
+      <div class="pagination">
+            <button class="pgnBtn" name="prev" (click)="prevTour()">&#9664; Prev</button>
+            <label for="dropdown" class="dropdownTxt">{{pagination.page}} / {{pagination.totalPages}}</label>
+            <select name="perPage" id="perPage" [(ngModel)]="pagination.perPage" (ngModelChange)="perPageChanged($event)">
+              <option value="3">3</option>    
+              <option value="9">9</option>
+              <option value="20">20</option>
+              <option value="40">40</option>
+              <option value="80">80</option>
+            </select>
+            <button class="pgnBtn" name="next" (click)="nextTour()">Next &#9654;</button>
+      </div>
+</div>
+<!-- </div> -->

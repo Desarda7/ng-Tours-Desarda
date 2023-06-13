@@ -1,0 +1,21 @@
+<app-first-page></app-first-page>
+<div class="inner-container">
+    <h1 class="heading-secondary">Let`s go</h1>
+    <p class="subtext">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia
+      odio vitae vestibulum vestibulum.
+    </p>
+    <div class="grid d-grid">
+<app-cards *ngFor="let mycard of mycards" [card]="mycard"></app-cards>
+</div>
+<div class="btn-container text-center">
+    <button class="show-btn text-upper border-none" (click)="showTours()">Show more</button>
+  </div>
+
+</div> 
+<app-promo></app-promo>
+<app-hiking></app-hiking>
+<app-explore></app-explore>
+<app-quote></app-quote>
+<app-subscribe></app-subscribe>
+

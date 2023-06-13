@@ -1,0 +1,28 @@
+
+ <div *ngIf="card">
+  
+    <div class="card-card d-flex">
+    <div class="img">
+      <div class="foto1 h-100 w-100 d-flex">
+      <img [src]="getImageUrl(card)" >
+       </div>
+    </div>
+   <div class="backg-card align-center">
+    <h2 class="title">{{card.title}}</h2>
+    <p class="body-card">From ${{card.price}}</p>
+    <p class="body-card">Available places: {{card.quantity}}</p>
+    <p class="body-card">Departure: {{card.departurePlace}}</p>
+    <p class="body-card">Destination: {{card.destination}}</p>
+    <p class="body-card">Departure Date: {{card.departureDate}}</p>
+    <p class="body-card">Arrival Date: {{card.arrivalDate}}</p>
+    <div class="otherData">
+  </div> 
+   <div class="button">
+    <button class="detailsBtn" (click)="showDetails(card.id)">Go to details</button>
+   </div>
+</div>
+
+</div>
+</div>
+ 
+ 

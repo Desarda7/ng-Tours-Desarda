@@ -1,0 +1,107 @@
+<!-- <div class="contact-page">
+ 
+  <div class="form-container">
+    <div class="form-heading">Contact Us</div>
+  <div class="inputs">
+  <form class="contact-form" (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+    <div>
+      <label>
+        <span class="forms-input">Title</span>  
+      </label>
+      <input
+        type="text"
+        required
+        [(ngModel)]="contactForm.title"
+        name="title"
+        #title="ngModel"
+      />
+      <ng-container *ngIf="title.touched && title.invalid"><span class="validation">Title is required!</span></ng-container>
+    </div>
+    <div>
+      <label>
+        <span class="forms-input">Body</span>  
+      </label>
+      <input
+        type="textarea"
+        required
+        [(ngModel)]="contactForm.body"
+        name="body"
+        #body="ngModel"
+      />
+      <ng-container *ngIf="body.touched && body.invalid"><span class="validation">Body is required!</span></ng-container>
+    </div>
+    <div>
+      <label>
+        <span class="forms-input">Email</span>
+      </label>
+      <input
+        type="text"
+        required
+        [(ngModel)]="contactForm.email"
+        name="email"
+        #email="ngModel"
+      />
+      <ng-container *ngIf="email.touched && email.invalid"><span class="validation">Email is required!</span></ng-container>
+    </div>
+    <button type="submit" class="btn">
+      Send
+    </button>
+  </form>
+</div>
+</div>
+<div>
+  <p class="contact-text">
+   Please fill the form and let us know more about your interest.Thank you!
+  </p>
+</div> -->
+
+<!-- <div class="img">
+  <p class="img-container"></p>
+</div> -->
+<!-- </div> -->
+
+<!-- Reactive Form -->
+<div class="contact-page">
+  <div class="form-container">
+    <div class="form-heading">Contact Us</div>
+    <div class="inputs">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <label for="title"><span class="forms-input"> Title </span></label>
+        <input id="title" type="text" formControlName="title" />
+        <ng-container
+          *ngIf="
+            contactForm.controls.title.touched &&
+            contactForm.controls.title.invalid
+          "
+          ><span class="validation">Title is not valid!</span></ng-container
+        >
+        <label for="body"><span class="forms-input"> Body </span></label>
+        <input id="body" type="text" formControlName="body" />
+        <ng-container
+          *ngIf="
+            contactForm.controls.body.touched &&
+            contactForm.controls.body.invalid
+          "
+          ><span class="validation">Body is not valid!</span></ng-container
+        >
+        <label for="email"><span class="forms-input"> Email </span></label>
+        <input id="email" type="text" formControlName="email" />
+        <ng-container
+          *ngIf="
+            contactForm.controls.email.touched &&
+            contactForm.controls.email.invalid
+          "
+          ><span class="validation">Email is not valid!</span></ng-container
+        >
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <div>
+      <p class="contact-text">
+        Please fill the form and let us know more about your interest.Thank you!
+      </p>
+
+      <p *ngIf="!!errorMessage">{{errorMessage}}</p>
+    </div>
+  </div>
+</div>

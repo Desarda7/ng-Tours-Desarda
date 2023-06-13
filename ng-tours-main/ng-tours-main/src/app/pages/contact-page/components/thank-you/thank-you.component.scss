@@ -1,0 +1,39 @@
+.alertMsg{
+    text-transform: uppercase;
+    color: #8a5358;
+    font-weight: bold;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 42%;
+    
+}
+
+.backBtn{
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    padding: 0.6em 2em;
+    text-decoration: none;
+    border-left: solid 4px #54524f;
+    border-right: solid 4px #54524f;
+    color: #776c64;
+    background: #fdf2e9;
+    transition: 0.4s;
+    max-width: 200px;
+    }
+.backBtn:hover {
+    background: white;
+    color: #3f3f3f;
+    }    
+   
+.thankyou{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column-reverse;
+}

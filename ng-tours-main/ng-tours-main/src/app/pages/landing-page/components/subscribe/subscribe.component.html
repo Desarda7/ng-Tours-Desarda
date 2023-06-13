@@ -1,0 +1,28 @@
+<div class="seven">
+<div class="section-seven d-flex align-center justify-center">
+    <div class="part-1-seven">
+    <h1 class="title-seven text-center">Title Here</h1>
+    <p class="body-seven text-center">Lorem ipsum dolor sit amet, consectetur
+        adispiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+    </div>
+<div class="email-seven d-flex">
+  <div>
+ <form [formGroup]="subscribersForm" (ngSubmit)="subscribe()">
+    <input type="text" class="your-email border-none" placeholder="Your Email" formControlName="email">
+    <ng-container
+    *ngIf="
+      subscribersForm.controls.email.touched &&
+      subscribersForm.controls.email.invalid
+    "
+    ><span class="validation">Email is not valid!</span></ng-container
+  >
+    <button class="subscribe border-none text-upper text-center">Subscribe</button>
+ </form>
+</div>
+ <p *ngIf="!!errorMsg">{{errorMsg}}</p>
+</div>
+</div>
+<div>
+  <p class="showMsg" *ngIf="showMessage">Thank Your For Subscribing</p>
+ </div>
+</div>

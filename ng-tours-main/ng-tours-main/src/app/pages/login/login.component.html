@@ -1,0 +1,30 @@
+<div class="centerDiv">
+<div class="loginForm">
+   
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+    <h2>Login</h2>
+    <div class="inputs">
+    <label for="email">Email</label>
+    <input id="email" type="text" placeholder="example@email.com" formControlName="email">
+    <ng-container
+          *ngIf="
+            loginForm.controls['email'].touched &&
+            loginForm.controls['email'].invalid
+          "
+          ><span class="validation">Email is not valid!</span></ng-container
+        >
+    </div>
+    <div class="inputs">
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password">
+    <!-- <ng-container *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+      <span class="validation">Password is not valid!</span>
+    </ng-container>  -->
+    </div>
+    <button type="submit">Login</button>
+  </form>
+</div>
+<!-- <div class="sidePhoto">
+    <p>Join Us</p>
+</div> -->
+</div>
